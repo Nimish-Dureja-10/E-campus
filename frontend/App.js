@@ -1,13 +1,13 @@
-import { StatusBar } from 'expo-status-bar';
-import { Text, View } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
+import "react-native-gesture-handler";
+import Navigation from "./Navigation";
+import LoginScreen from "./screens/LoginScreen";
+import { View } from "react-native";
 
 export default function App() {
+  const user = true;
   return (
-    <View className="flex-1 items-center justify-center bg-green-400">
-      <Text>Open up App.js to start working on your app!</Text>
-      <HomeScreen />
-      <StatusBar style="auto" />
+    <View className="flex-1">
+      {user ? <Navigation/> : <LoginScreen />}
     </View>
   );
 }
