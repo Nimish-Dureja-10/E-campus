@@ -3,9 +3,22 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import userRoutes from "./routes/userRoutes.js";
 import noticeBoardRoutes from "./routes/noticeBoardRoutes.js";
+import cors from "cors";
 dotenv.config();
-
 const app = express();
+
+// const allowedOrigins = [
+//   'http://192.168.29.174:8081',
+// ];
+
+// // allows cross original server request
+// app.use(cors({
+//   origin:allowedOrigins,
+//   credentials:true,
+// }));
+
+app.use(cors());
+
 app.use(express.json());
 
 main().catch((err) => console.log(err));
