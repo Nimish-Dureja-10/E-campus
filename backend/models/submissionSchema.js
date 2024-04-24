@@ -7,12 +7,16 @@ const submissonSchema = mongoose.Schema({
     },
     student: {
         type: Object,
-        ref: 'users'
+        ref: 'users',
+        required: false //change
     },
-    submissionDate: Date,
+    submissionDate: {
+        type: Date,
+        default: Date.now
+    },
     submissionFiles: [String]
 });
 
 const submission = mongoose.model('submission', submissonSchema);
 
-export const submission;
+export default submission;

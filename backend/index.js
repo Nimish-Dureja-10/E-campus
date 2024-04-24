@@ -3,6 +3,8 @@ import mongoose from "mongoose";
 import dotenv from 'dotenv';
 import userRoutes from "./routes/userRoutes.js";
 import noticeBoardRoutes from "./routes/noticeBoardRoutes.js";
+import assignmentRoutes from "./routes/assignmentRoutes.js";
+import submissionRoutes from "./routes/submissionRoutes.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -31,6 +33,8 @@ async function main() {
 
 app.use("/api/v1",userRoutes);
 app.use("/api/v1",noticeBoardRoutes);
+app.use("/api/v1",assignmentRoutes);
+app.use("/api/v1",submissionRoutes )
 
 app.listen(process.env.PORT,()=>{
     console.log(`Server is running on port - ${process.env.PORT}`);
